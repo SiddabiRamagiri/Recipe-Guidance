@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Recipe Guidance App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+      <a href="login.html">Login</a>
+      <a href="home.html">Recipes</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>🍽️ Welcome to Recipe Guidance</h1>
+    <p>Discover, cook, and enjoy delicious homemade meals.</p>
+    <a href="register.html"><button>Get Started</button></a>
+  </main>
+
+  <footer>
+    <p></p>&copy; 2025 Recipe Guidance App. All rights reserved.</p>
+  </footer>
+
+  <script>
+    if (localStorage.getItem("loggedInUser")) {
+      window.location.href = "home.html";
+    }
+  </script>
+</body>
+</html>

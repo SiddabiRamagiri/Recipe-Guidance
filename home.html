@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Recipes - Recipe Guidance</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+      <a href="login.html">Login</a>
+      <a href="home.html">Recipes</a>
+    </nav>
+  </header>
+
+
+  <main class="container">
+    <div class="logo">recipeGudience</div>
+    <h2>Welcome to Your Recipe Guide</h2>
+    <p id="welcomeMessage"></p>
+
+    <ul class="recipes">
+      <li><strong>🥗 Salad:</strong> Chop vegetables → Mix → Add dressing</li>
+      <li><strong>🍝 Pasta:</strong> Boil → Drain → Add sauce</li>
+      <li><strong>🥚 Omelette:</strong> Beat eggs → Cook → Flip → Serve</li>
+    </ul>
+
+    <button onclick="logout()">Logout</button>
+  </main>
+  <footer>
+    <p>&copy; 2025 Recipe Guidance App. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const user = JSON.parse(localStorage.getItem("loggedInUser"));
+    if (!user) {
+      window.location.href = "login.html";
+    } else {
+      document.getElementById("welcomeMessage").innerText =
+        `Hello, ${user.name}! Let's get cooking.`;
+    }
+
+    function logout() {
+      localStorage.removeItem("loggedInUser");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
